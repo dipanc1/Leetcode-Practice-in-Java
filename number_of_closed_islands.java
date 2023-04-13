@@ -34,6 +34,6 @@ class Solution60 {
 public class number_of_closed_islands {
     public static void main(String[] args) {
         Solution60 s = new Solution60();
-        System.out.println(s.closedIsland(new int[][]{{1, 1, 1, 1, 1, 1, 1, 0},{1, 0, 0, 0, 0, 1, 1, 0},{1, 0, 1, 0, 1, 1, 1, 0},{1, 0, 0, 0, 0, 1, 0, 1},{1, 1, 1, 1, 1, 1, 1, 0}}));
+        System.out.println(s.closedIsland(new int[][] {{1, 1, 1, 1, 1, 1, 1, 0},{1, 0, 0, 0, 0, 1, 1, 0},{1, 0, 1, 0, 1, 1, 1, 0},{1, 0, 0, 0, 0, 1, 0, 1},{1, 1, 1, 1, 1, 1, 1, 0}}));
     }
 }
