@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution100 {
     public int removeDuplicates(int[] nums) {
         int addIndex = 0;
@@ -6,7 +8,6 @@ class Solution100 {
             if (nums[i] == nums[i - 1]) {
                 addIndex++;
             }
-
             nums[i - addIndex] = nums[i];
         }
         return nums.length - addIndex;
@@ -16,6 +17,6 @@ class Solution100 {
 public class remove_duplicates_from_sorted_array {
     public static void main(String[] args) {
         Solution100 s = new Solution100();
-        System.out.println(s.removeDuplicates(new int[]{1, 1, 2}));
+        System.out.println(s.removeDuplicates(new int[]{1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 5}));
     }
 }
