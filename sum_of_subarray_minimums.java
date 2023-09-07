@@ -26,7 +26,7 @@ class Solution133 {
 
             stack.push(i);
         }
-
+        System.out.println(listL + " " + listR);
 
         for (int i = 0, j = arr.length - 1; i < arr.length && j >= 0; i++, j--) {
             long total = ((long) listL.get(i) * listR.get(j)) % 1000000007;
