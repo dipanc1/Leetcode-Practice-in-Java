@@ -19,7 +19,7 @@ class Solution87 {
 
 public class fibonacci_numbers {
     public static void main(String[] args) {
-        Solution87 s = new Solution87();
-        System.out.println(Arrays.toString(s.printFibb(5)));
+         Solution87 s = new Solution87();
+        System.out.println(Arrays.toString(s.printFibb(50)));
     }
 }
