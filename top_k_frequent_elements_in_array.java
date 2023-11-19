@@ -7,11 +7,11 @@ class Solution93 {
         int[] ans = new int[k];
         Map<Integer, Integer> integerMap = new HashMap<Integer, Integer>();
 
-        for (int i = 0; i < n; i++) {
-            if (!integerMap.containsKey(nums[i])) {
-                integerMap.put(nums[i], 1);
+        for (int num : nums) {
+            if (!integerMap.containsKey(num)) {
+                integerMap.put(num, 1);
             } else {
-                integerMap.put(nums[i], integerMap.get(nums[i]) + 1);
+                integerMap.put(num, integerMap.get(num) + 1);
             }
         }
 
