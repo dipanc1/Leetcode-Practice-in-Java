@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.HashMap;
 
 class Solution37 {
     public boolean checkInclusion(String s1, String s2) {
@@ -16,6 +18,7 @@ class Solution37 {
         }
 
         return false;
+
     }
 
     private boolean allZero(int[] count) {

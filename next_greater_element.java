@@ -4,19 +4,19 @@ import java.util.Stack;
 
 class Solution129 {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-
-        //starting with the end of array, when stack is empty, there is no greater element the last so put -1 in map
-//push it in stack. Now next element compare it with top element in stack. if nums2 < top of stack
-//put stack.peek in map else we will keep popping until we find element in stack which is greater than nums2 element
-
         Stack<Integer> stack = new Stack<>();
         HashMap<Integer, Integer> map = new HashMap<>();
+
+        // starting with the end of array, when stack is empty, there is no greater element the last so put -1 in map
+        // Now next element compare it with top element in stack. if nums2 < top of stack push it in stack.
+        // put stack.peek in map else we will keep popping until we find element in stack which is greater than nums2 element
+
 
         for (int i = nums2.length - 1; i >= 0; i--) {
 
             if (stack.isEmpty()) {
                 map.put(nums2[i], -1);
-            } else if (!stack.isEmpty() && nums2[i] < stack.peek()) {
+            } else if (nums2[i] < stack.peek()) {
                 map.put(nums2[i], stack.peek());
             } else {
                 while (!stack.isEmpty() && nums2[i] >= stack.peek()) {
@@ -28,10 +28,12 @@ class Solution129 {
                     map.put(nums2[i], stack.peek());
                 }
             }
+
             stack.push(nums2[i]);
         }
 
         int[] ans = new int[nums1.length];
+
         for (int i = 0; i < nums1.length; i++) {
             ans[i] = map.get(nums1[i]);
         }
