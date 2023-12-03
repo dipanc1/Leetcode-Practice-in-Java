@@ -7,18 +7,17 @@ class Solution108 {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(candidates);
         search(list, new ArrayList<>(), candidates, target, 0);
-
         return list;
     }
 
-    private void search(List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start) {
-        if (remain == 0) list.add(new ArrayList<>(tempList));
+    private void search(List<List<Integer>> list, List<Integer> templList, int[] nums, int remain, int start) {
+        if (remain == 0) list.add(new ArrayList<>(templList));
         else if (remain < 0) return;
         else {
             for (int i = start; i < nums.length; i++) {
-                tempList.add(nums[i]);
-                search(list, tempList, nums, remain - nums[i], i);
-                tempList.remove(tempList.size() - 1);
+                templList.add(nums[i]);
+                search(list, templList, nums, remain - nums[i], i);
+                templList.remove(templList.size() - 1);
             }
         }
     }

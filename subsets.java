@@ -4,30 +4,19 @@ import java.util.List;
 
 class Solution128 {
     public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> numList = new ArrayList<>();
-
-        result.add(new ArrayList<>());
-        subsets(0, nums, numList, result, true);
-        return result;
+        subset(list, new ArrayList<>(), nums, 0);
+        return list;
     }
 
-    private void subsets(int offset, int[] nums, List<Integer> numList, List<List<Integer>> result, boolean isPicked) {
-        if (offset >= nums.length) return;
-
-        int val = nums[offset];
-        if (offset == 0 || nums[offset - 1] != nums[offset] || isPicked) {
-            numList.add(val);
-
-            subsets(offset + 1, nums, numList, result, true);
-
-            result.add(new ArrayList<>(numList));
-
-            numList.remove(numList.size() - 1);
+    public void subset(List<List<Integer>> list, List<Integer> templList, int[] nums, int start) {
+        list.add(new ArrayList<>(templList));
+        for (int i = start; i < nums.length; i++) {
+            templList.add(nums[i]);
+            subset(list, templList, nums, i + 1);
+            templList.remove(templList.size() - 1);
         }
-
-        subsets(offset + 1, nums, numList, result, false);
     }
 }
 
