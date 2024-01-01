@@ -5,7 +5,6 @@ class Solution169 {
         int[] rowCount = new int[rows];
         int[] colCount = new int[column];
         int output = 0;
-
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < column; j++) {
                 if (mat[i][j] == 1) {
