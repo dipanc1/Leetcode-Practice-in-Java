@@ -4,29 +4,30 @@ class MyQueue {
 
     Stack<Integer> input;
     Stack<Integer> output;
+
     public MyQueue() {
         input = new Stack<>();
         output = new Stack<>();
     }
 
     public void push(int x) {
+        while (!input.isEmpty())
+            output.push(input.pop());
         input.push(x);
+        while (!output.isEmpty())
+            input.push(output.pop());
     }
 
     public int pop() {
-        peek();
-        return output.pop();
+        return input.pop();
     }
 
     public int peek() {
-        if (output.empty())
-            while (!input.empty())
-                output.push(input.pop());
-        return output.peek();
+        return input.peek();
     }
 
     public boolean empty() {
-        return input.empty() && output.empty();
+        return input.empty();
     }
 }
 
