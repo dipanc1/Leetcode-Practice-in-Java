@@ -7,6 +7,7 @@ class Solution37 {
         if (len1 > len2) return false;
 
         int[] count = new int[26];
+
         for (int i = 0; i < len1; i++) {
             count[s1.charAt(i) - 'a']++;
         }
@@ -22,7 +23,7 @@ class Solution37 {
     }
 
     private boolean allZero(int[] count) {
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < count.length; i++) {
             if (count[i] != 0) return false;
         }
         return true;
@@ -32,6 +33,6 @@ class Solution37 {
 public class permutation_in_string {
     public static void main(String[] args) {
         Solution37 s = new Solution37();
-        System.out.println(s.checkInclusion("bc", "eidbaooo"));
+        System.out.println(s.checkInclusion("ab", "eidbaooo"));
     }
 }
