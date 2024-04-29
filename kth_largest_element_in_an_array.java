@@ -5,10 +5,16 @@ class Solution161 {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>((a, b) -> b - a);
 
         for (int num : nums) {
-            priorityQueue.offer(num);
+            priorityQueue.add(num);
         }
 
-        return priorityQueue.poll();
+        System.out.println(priorityQueue);
+
+        for (int i = 0; i < k - 1; i++) {
+            priorityQueue.poll();
+        }
+
+        return priorityQueue.peek();
     }
 }
 

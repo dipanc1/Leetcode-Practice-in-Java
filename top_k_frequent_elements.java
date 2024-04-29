@@ -1,32 +1,24 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.PriorityQueue;
+import java.util.*;
 
 class Solution85 {
     public int[] topKFrequent(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
+        HashMap<Integer, Integer> hp = new HashMap<>();
+        PriorityQueue<Integer> minheap = new PriorityQueue<>((a,b) -> hp.get(b) - hp.get(a));
+
+        for (int num : nums) {
+            hp.put(num, hp.getOrDefault(num, 0) + 1);
+        }
+
+        minheap.addAll(hp.keySet());
+
         int[] ans = new int[k];
 
-        // making table with no. of occurrences
-        for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
-        }
-
-        minHeap.addAll(map.keySet()); // for (int i : map.keySet()) {minHeap.add(i);}
-
         for (int i = 0; i < k; i++) {
-            ans[i] = minHeap.poll();
+            ans[i] = minheap.poll();
         }
 
-        // {1=3, 2=2, 3=1}
-        // 1
-        // 2
-        // 3
-        // [1, 2, 3]
-        // [1, 2]
         return ans;
+
     }
 }
 
