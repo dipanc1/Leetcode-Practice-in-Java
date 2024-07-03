@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class Solution3 {
+class Solution3{
     public String longestCommonPrefix(String[] strs) {
         StringBuilder r = new StringBuilder();
         int n = strs.length;

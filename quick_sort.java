@@ -6,8 +6,8 @@ class Solution97 {
         arr[j] = temp;
     }
 
-    //Function to sort an array using quick sort algorithm.
-    static void quickSort(int arr[], int low, int high) {
+    // Function to sort an array using quick sort algorithm.
+    static void quickSort(int[] arr, int low, int high) {
         // code here
         if (low < high) {
             int pi = partition(arr, low, high);
@@ -17,7 +17,7 @@ class Solution97 {
         }
     }
 
-    static int partition(int arr[], int low, int high) {
+    static int partition(int[] arr, int low, int high) {
         // your code here
         int pivot = arr[high];
 
