@@ -19,13 +19,35 @@ class Solution153 {
 //        }
 //        return true;
 
-        StringBuilder stringBuilder = new StringBuilder();
+//        StringBuilder stringBuilder = new StringBuilder();
+//
+//        for (char ch :s.toCharArray()) {
+//            if (Character.isLetterOrDigit(ch)) stringBuilder.append(Character.toLowerCase(ch));
+//        }
+//
+//        return stringBuilder.toString().equals(stringBuilder.reverse().toString());
 
-        for (char ch :s.toCharArray()) {
-            if (Character.isLetterOrDigit(ch)) stringBuilder.append(Character.toLowerCase(ch));
-        }
+        if (s.isEmpty()) return true;
 
-        return stringBuilder.toString().equals(stringBuilder.reverse().toString());
+        StringBuilder sw = new StringBuilder();
+
+
+        System.out.println(sw.toString());
+
+        return rec(sw.toString(), 0);
+    }
+
+    public boolean rec(String s, int i) {
+        int n = s.length();
+
+        if (i >= n / 2) return true;
+
+        char currFirst = s.charAt(i);
+        char currLast = s.charAt(n - i - 1);
+
+        if (currFirst != currLast) return false;
+
+        return rec(s, i + 1);
     }
 }
 

@@ -7,7 +7,7 @@ class Solution121 {
 
     public List<String> letterCombinations(String digits) {
         res = new ArrayList<>();
-        if (digits.length() == 0) return res;
+        if (digits.isEmpty()) return res;
 
         dfs(0, digits, new StringBuilder());
         return res;
@@ -20,7 +20,9 @@ class Solution121 {
         }
 
         char ch = digits.charAt(length);
+
         String str = strMap[ch - '0'];
+
         for (char c : str.toCharArray()) {
             temp.append(c);
             dfs(length + 1, digits, temp);
